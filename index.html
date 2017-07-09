@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+
+<form name="myform">
+    <input type="text" name="input1" value="input1">
+    <input type="text" name="input2" value="input2">
+    <button type="button" class="btn">отправить</button>
+</form>
+<script>
+    let form = document.forms.myform;
+    $('.btn').click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            "type": "POST",
+            "url": "/hernya",
+            "data": {
+                "Test": "HeLLLOOO!!!",
+                "input1": form.input1.value,
+                "input2": form.input2.value,
+            }
+        }).done(function (d) {
+            console.log(d);
+        });
+    })
+</script>
+
+</body>
+</html>
