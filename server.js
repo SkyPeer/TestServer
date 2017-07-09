@@ -3,6 +3,13 @@ let express = require('express'),
     http = require('http'),
     bodyParser = require('body-parser'),
     servak = http.createServer(appl);
+   // bodyclass = require('bodyclass');
+
+let bodyobject = {
+    page,
+    firstname,
+    lastname,
+};
 
 appl.use(bodyParser.json());
 appl.use(bodyParser.urlencoded({extended: false}));
@@ -10,7 +17,10 @@ appl.use(bodyParser.urlencoded({extended: false}));
 appl.post('/hernya', function (req, res) {
     let body = req.body;
     let query = req.query;
-    console.log(body);
+    console.log(body.pagefrom);
+    console.log(body.input1);
+    console.log(body.input2);
+
     res.send(
         {query,body}
         //{query:query,body:body}
