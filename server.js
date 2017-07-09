@@ -23,7 +23,7 @@ appl.get('/test', function (request, response, next) {
 });
 
 appl.get('*', function (req, res) {
-    res.sendFile("test.html",{root:__dirname})
+    res.sendFile("index.html",{root:__dirname})
 });
 
 
